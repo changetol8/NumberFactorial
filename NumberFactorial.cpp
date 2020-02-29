@@ -4,17 +4,22 @@ using std::cout;
 using std::endl;
 
 long long getFactorial(long long number) {
-	if (number == 0) {
-		return 1;
+	if (number >= 0) {
+		if (number == 0) {
+			return 1;
+		}
+		if (number == 1) {
+			return 1;
+		}
+		return getFactorial(number - 1) * number;
 	}
-	if (number == 1) {
-		return 1;
+	else {
+		cout << "The number must be greater than or equal to 0" << endl;
 	}
-	return getFactorial(number - 1) * number;
 }
 
 
 int main() {
-	cout << getFactorial(15) << endl;
+	cout << getFactorial(0) << endl;
 	return 0;
 }
